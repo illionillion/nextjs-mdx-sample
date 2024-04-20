@@ -2,6 +2,9 @@
 
 import withMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // Configure pageExtensions to include md and mdx
@@ -15,8 +18,8 @@ export default withMDX({
   extension: /\.mdx?$/,
   options: {
     // If you use remark-gfm, this configuration remains the same.
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    remarkPlugins: [remarkGfm, remarkMath],
+    rehypePlugins: [rehypeKatex],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
