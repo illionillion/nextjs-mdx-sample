@@ -4,6 +4,7 @@ import withMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypePrism from "@mapbox/rehype-prism";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,7 +20,7 @@ export default withMDX({
   options: {
     // If you use remark-gfm, this configuration remains the same.
     remarkPlugins: [remarkGfm, remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypePrism],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
